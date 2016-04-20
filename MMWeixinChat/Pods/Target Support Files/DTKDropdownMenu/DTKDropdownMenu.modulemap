@@ -1,0 +1,6 @@
+framework module DTKDropdownMenu {
+  umbrella header "DTKDropdownMenu-umbrella.h"
+
+  export *
+  module * { export * }
+}
