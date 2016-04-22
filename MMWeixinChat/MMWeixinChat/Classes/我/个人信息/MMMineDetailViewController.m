@@ -8,6 +8,7 @@
 
 #import "MMMineDetailViewController.h"
 #import "MMUIhelp.h"
+#import "MMMyCodeViewController.h"
 @interface MMMineDetailViewController ()
 
 @end
@@ -30,7 +31,27 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    id vc = nil;
+    if (indexPath.section == 0 && indexPath.row == 0) {     // 个人信息
+//        vc = [[MMMineDetailViewController alloc] init];
+    }
+    else {
+        SettingGrounp *group = [self.data objectAtIndex:indexPath.section];
+        MMSettingItem *item = [group itemAtIndex: indexPath.row];
+        if ([item.title isEqualToString:@"我的二维码"]) {
+            vc = [[MMMyCodeViewController alloc] init];
+        }
+//        else if ([item.title isEqualToString:@"设置"]) {
+//            //            vc = [[TLSettingViewController alloc] init];
+//        }
+    }
+    if (vc != nil) {
+        [self setHidesBottomBarWhenPushed:YES];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
     [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
+
 }
+
 @end
 

@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MMRootViewController.h"
-#import "FLEXManager.h"
+//#import "FLEXManager.h"
 @interface AppDelegate ()
 
 @end

@@ -69,14 +69,14 @@
 {
     NSMutableArray *items = [[NSMutableArray alloc] init];
     MMSettingItem *tag = [MMSettingItem createWithTitle:@"设置备注和标签"];
-    MMSettingItem *phone = [MMSettingItem createWithTitle:@"电话号码" subTitle:@"18888888888"];
-    phone.alignment = SettingItemAlignmentLeft;
-    SettingGrounp *group1 = [[SettingGrounp alloc] initWithHeaderTitle:nil footerTitle:nil settingItems:tag, phone, nil];
+//    MMSettingItem *phone = [MMSettingItem createWithTitle:@"电话号码" subTitle:@"18888888888"];
+//    phone.alignment = SettingItemAlignmentLeft;
+    SettingGrounp *group1 = [[SettingGrounp alloc] initWithHeaderTitle:nil footerTitle:nil settingItems:tag, nil];
     [items addObject:group1];
     MMSettingItem *position = [MMSettingItem createWithTitle:@"地区" subTitle:@"山东 青岛"];
     position.alignment = SettingItemAlignmentLeft;
     MMSettingItem *album = [MMSettingItem createWithTitle:@"个人相册"];
-    album.subImages = @[@"1.jpg", @"2.jpg", @"8.jpg", @"0.jpg"];
+    album.subImages = @[@"bottleBkg", @"bottleBkg", @"bottleBkg", @"bottleBkg"];
     album.alignment = SettingItemAlignmentLeft;
     MMSettingItem *more = [MMSettingItem createWithTitle:@"更多"];
     SettingGrounp *group2 = [[SettingGrounp alloc] initWithHeaderTitle:nil footerTitle:nil settingItems:position, album, more, nil];

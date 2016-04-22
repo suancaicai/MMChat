@@ -9,14 +9,13 @@
 #import "MMFriendDetailsViewController.h"
 #import "MMDetailsSettingViewController.h"
 #import "MMUserDetailCell.h"
-
 #import "MMDetailsSettingViewController.h"
 #import "MMUIhelp.h"
 
 @interface MMFriendDetailsViewController ()
 
 @property (nonatomic, strong) MMDetailsSettingViewController *detailSettingVC;
-
+@property (nonatomic, strong) UIBarButtonItem *rightBarButtonItem;
 @end
 
 
@@ -28,9 +27,8 @@
     [self.navigationItem setTitle:@"详细资料"];
     [self.tableView registerClass:[MMUserDetailCell class] forCellReuseIdentifier:@"MMUserDetailCell"];
     [self initTestData];
+    [self.navigationItem setRightBarButtonItem:self.rightBarButtonItem];
 
-    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"barbuttonicon_more"] style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonDown)];
-    [self.navigationItem setRightBarButtonItem:rightBarButtonItem];
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -57,6 +55,7 @@
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+
     if (indexPath.section == 0) {
         MMUserDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MMUserDetailCell"];
         [cell setUser:_user];
@@ -66,6 +65,8 @@
         [cell setBottomLineStyle:CellLineStyleFill];
         return cell;
     }
+
+
     return [super tableView:tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section - 1]];
 }
 
@@ -120,4 +121,11 @@
     return _detailSettingVC;
 }
 
+- (UIBarButtonItem *) rightBarButtonItem
+{
+    if (_rightBarButtonItem == nil) {
+        _rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"barbuttonicon_more"] style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonDown)];
+    }
+    return _rightBarButtonItem;
+}
 @end

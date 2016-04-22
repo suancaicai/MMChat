@@ -21,7 +21,7 @@
  *  @return
  */
 static CGFloat DDPMAX_TABLEVIEW_HEIGHT(){
-    return [UIScreen mainScreen].bounds.size.height * 0.6f;
+    return [UIScreen mainScreen].bounds.size.height * 10.6f;
 }
 
 static CGFloat DDP_TABLEVIEW_HEIGHT = 0.f;
@@ -190,7 +190,7 @@ static const CGFloat DDP_PADDING = 5.f;
     [self.wrapperView addSubview:self.backgroundView];
     [self.wrapperView addSubview:self.tableViewTopArrow];
     [self.wrapperView addSubview:self.tableView];
-    menuWeakSelf(menuWeakSelf)
+    menuWeakSelf(menuWeakSelf)//frame = (264 7; 40 30);
     
     [self.wrapperView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(nav.view);

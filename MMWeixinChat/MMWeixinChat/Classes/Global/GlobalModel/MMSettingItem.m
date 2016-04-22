@@ -80,7 +80,7 @@
         self.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     else if (type == SettingItemTypeButton) {
-        self.btnBGColor = [UIColor greenColor];
+        self.btnBGColor = [UIColor colorWithRed:37/255.0f green:160/255.0f  blue:20/255.0f  alpha:1];
         self.btnTitleColor = [UIColor whiteColor];
         self.accessoryType = UITableViewCellAccessoryNone;
         self.selectionStyle = UITableViewCellSelectionStyleNone;

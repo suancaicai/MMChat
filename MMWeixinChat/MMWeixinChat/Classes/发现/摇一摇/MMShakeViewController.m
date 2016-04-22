@@ -11,6 +11,7 @@
 #import "MMOptions.h"
 
 #define     SHAKE_HEIGHT    90
+
 @interface MMShakeViewController ()
 {
     UIImageView *lineUpImageView;
@@ -26,17 +27,21 @@
 @property (nonatomic, strong) NSMutableArray *menuButtons;
 
 @end
+
+
 @implementation MMShakeViewController
+
+
 
 #pragma mark - LifeCycle
 - (void) viewDidLoad
 {
     [super viewDidLoad];
     [self.navigationItem setTitle:@"摇一摇"];
-    [self.view setBackgroundColor:WBColor(42, 45, 46, 1.0)];
-
     [self.navigationItem setRightBarButtonItem:self.rightBarButtonItem];
 
+
+    [self.view setBackgroundColor:WBColor(42, 45, 46, 1.0)];
     [self initSubViews];
 }
 
@@ -151,10 +156,8 @@
 #pragma mark - Getter and Setter
 - (UIBarButtonItem *) rightBarButtonItem
 {
-    if (_rightBarButtonItem) {
-        _rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"barbuttonicon_add"] style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonDown)];
-
-        
+    if (_rightBarButtonItem == nil) {
+        _rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"barbuttonicon_set"] style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonDown)];
     }
     return _rightBarButtonItem;
 }

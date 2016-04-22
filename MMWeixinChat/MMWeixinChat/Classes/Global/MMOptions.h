@@ -12,6 +12,7 @@
 //
 #import "MMUIhelp.h"
 #import "MMSettingItem.h"
+#import "QRCodeGenerator.h"
 
 
 //categray

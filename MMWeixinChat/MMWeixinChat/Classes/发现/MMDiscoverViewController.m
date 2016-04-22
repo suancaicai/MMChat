@@ -9,11 +9,15 @@
 #import "MMDiscoverViewController.h"
 #import "MMUIhelp.h"
 #import "MMShakeViewController.h"
+#import "MMBottleViewController.h"
 
 
 
 @interface MMDiscoverViewController ()
 @property (nonatomic , strong)MMShakeViewController *shakeVC;
+@property (nonatomic , strong)MMBottleViewController *bottleVC;
+
+
 @end
 @implementation MMDiscoverViewController
 -(void)viewDidLoad{
@@ -38,9 +42,9 @@
     if ([item.title isEqualToString:@"摇一摇"]) {
         vc = self.shakeVC;
     }
-//    else if ([item.title isEqualToString:@"漂流瓶"]) {
-//        vc = self.bottleVC;
-//    }
+    else if ([item.title isEqualToString:@"漂流瓶"]) {
+        vc = self.bottleVC;
+    }
 //    else if ([item.title isEqualToString:@"购物"]) {
 //        vc = self.shoppingVC;
 //    }
@@ -61,13 +65,13 @@
     return _shakeVC;
 }
 
-//- (TLBottleViewController *) bottleVC
-//{
-//    if (_bottleVC == nil) {
-//        _bottleVC = [[TLBottleViewController alloc] init];
-//    }
-//    return _bottleVC;
-//}
+- (MMBottleViewController *) bottleVC
+{
+    if (_bottleVC == nil) {
+        _bottleVC = [[MMBottleViewController alloc] init];
+    }
+    return _bottleVC;
+}
 //
 //- (TLShoppingViewController *) shoppingVC
 //{
